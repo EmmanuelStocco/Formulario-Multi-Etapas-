@@ -20,11 +20,11 @@ export const FormStep3 = () => {
     }, []);
 
     const handleNextStep = () => {
-        if(state.email !== '' && state.github !== '') {
-            console.log(state);
+        if(state.name !== ''){
+            history.push('/step4');
         } else {
-            alert('Preencha com seus dados! ')
-        } 
+            alert('Preencha os dados! ')
+        }
     };
 
     const handleEmailChange = (e :ChangeEvent<HTMLInputElement>) => {
@@ -68,7 +68,7 @@ export const FormStep3 = () => {
                      />
                 </label>
 
-                <button onClick={handleNextStep}> Finalizar Cadastro </button>
+                <button onClick={handleNextStep}> Continuar </button>
                 <Link to="/step2" className='backButton'> Voltar </Link>
 
             </C.Container>
